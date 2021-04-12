@@ -1,4 +1,5 @@
 {
+    "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
         "node": true,
@@ -7,31 +8,17 @@
         "jest": true
     },
     "parserOptions": {
-        "ecmaFeatures": {
-            "arrowFunctions": true,
-            "blockBindings": true,
-            "classes": true,
-            "defaultParams": true,
-            "destructuring": true,
-            "forOf": true,
-            "generators": false,
-            "modules": true,
-            "objectLiteralComputedProperties": true,
-            "objectLiteralDuplicateProperties": false,
-            "objectLiteralShorthandMethods": true,
-            "objectLiteralShorthandProperties": true,
-            "restParams": true,
-            "spread": true,
-            "superInFunctions": true,
-            "templateStrings": true
-        }
-    },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+      },
     "extends": [
         "eslint:recommended",
         "plugin:node/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
+        "node/no-missing-import": 0,
         "no-debugger": 1,
         // Possible errors
         "comma-dangle": [
@@ -305,7 +292,12 @@
             2,
             7
         ],
-        "no-bitwise": 2
+        "no-bitwise": 2,
+        "@typescript-eslint/no-explicit-any": 1,
+        "node/no-unsupported-features/es-syntax": [
+            "error",
+            { "ignores": ["modules"] }
+        ]
     },
     "globals": {
         "$": true,

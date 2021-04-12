@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 class User {
   id: string;
@@ -18,7 +18,7 @@ class User {
     this.password = password;
   }
 
-  static toResponse(user) {
+  static toResponse(user: any) {
     const { id, name, login } = user;
     return { id, name, login };
   }

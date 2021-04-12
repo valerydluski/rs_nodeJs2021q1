@@ -2,7 +2,7 @@ import express from 'express';
 import swaggerUI from 'swagger-ui-express';
 import path from 'path';
 import YAML from 'yamljs';
-import {router as userRouter} from './resources/users/user.router';
+import { router as userRouter } from './resources/users/user.router';
 
 import { Application } from 'express';
 
